@@ -3,9 +3,11 @@ var app = express();
 
 var port = 4000;
 
+var datetime = new Date();
+
 app.get("/", (req, res) => {
   res.send({
-    status: "1.4"
+    status: "[1.5] \n"+datetime
   });
 });
 
@@ -17,8 +19,8 @@ buffer = new Buffer("some content\n");
 //var stream = fs.createWriteStream("my_file.txt");
 var stream = fs.createWriteStream(path);
 stream.once('open', function(fd) {
-  stream.write("My first row\n");
-  stream.write("My second row\n");
+  stream.write(datetime+" My first row\n");
+  stream.write(datetime+" My second row\n");
   stream.end();
 });
 
