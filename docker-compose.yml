@@ -1,0 +1,10 @@
+version: '2'
+services:
+
+  nodetest:
+    build:
+        context: .
+    ports:
+     - 20014:4000
+    volumes:
+    - ./upload2:/usr/app/upload
